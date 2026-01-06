@@ -1,0 +1,75 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/Belt Alarm/simulation/qsim
+vBeltAlarm
+Z1 !s110 1763472704
+!i10b 1
+!s100 `n8RBdnQaTIET8zRaaDoC0
+I[W>UaLzP>[1ZO;nFIbh^53
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1763472702
+Z4 8BeltAlarm.vo
+Z5 FBeltAlarm.vo
+L0 31
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1763472704.000000
+Z8 !s107 BeltAlarm.vo|
+Z9 !s90 -work|work|BeltAlarm.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@belt@alarm
+vBeltAlarm_vlg_vec_tst
+R1
+!i10b 1
+!s100 VS5QdJj<DA69hTI`jn27T1
+IYRJQdS9gkF>DSZ4nf;Q>X2
+R2
+R0
+w1763472701
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+n@belt@alarm_vlg_vec_tst
+vhard_block
+R1
+!i10b 1
+!s100 Y9oi_5=F2;PW7_Oil_L]N2
+IPgaENF;BAbTYi_:CaW`QN1
+R2
+R0
+R3
+R4
+R5
+L0 135
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

@@ -1,0 +1,27 @@
+|Count25
+clk => unit[0]~reg0.CLK
+clk => unit[1]~reg0.CLK
+clk => unit[2]~reg0.CLK
+clk => unit[3]~reg0.CLK
+clk => ten[0]~reg0.CLK
+clk => ten[1]~reg0.CLK
+clk => ten[2]~reg0.CLK
+clk => ten[3]~reg0.CLK
+rst_n => unit[0]~reg0.ACLR
+rst_n => unit[1]~reg0.ACLR
+rst_n => unit[2]~reg0.PRESET
+rst_n => unit[3]~reg0.ACLR
+rst_n => ten[0]~reg0.ACLR
+rst_n => ten[1]~reg0.PRESET
+rst_n => ten[2]~reg0.ACLR
+rst_n => ten[3]~reg0.ACLR
+ten[0] <= ten[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ten[1] <= ten[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ten[2] <= ten[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ten[3] <= ten[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+unit[0] <= unit[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+unit[1] <= unit[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+unit[2] <= unit[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+unit[3] <= unit[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

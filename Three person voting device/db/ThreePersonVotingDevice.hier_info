@@ -1,0 +1,8 @@
+|ThreePersonVotingDevice
+Y <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+C => inst1.IN1
+B => inst.IN1
+
+

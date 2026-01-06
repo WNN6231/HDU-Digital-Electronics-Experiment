@@ -1,0 +1,20 @@
+module vote5 (
+    input a,      // 第1个人的票
+    input b,      // 第2个人的票
+    input c,      // 第3个人的票
+    input d,      // 第4个人的票
+    input e,      // 第5个人的票
+    output result // 表决结果
+);
+
+    // 定义一个3位的寄存器用来存储总票数
+    // 5个人全票通过最大是5 (二进制 101)，所以需要3位宽
+    wire [2:0] sum;
+
+    // 1. 计算总票数
+    assign sum = a + b + c + d + e;
+
+    // 2. 判断逻辑：如果总票数大于等于3，输出1，否则输出0
+    assign result = (sum >= 3'd3) ? 1'b1 : 1'b0;
+
+endmodule

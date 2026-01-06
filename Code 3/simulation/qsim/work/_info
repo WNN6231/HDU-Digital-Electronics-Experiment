@@ -1,0 +1,75 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/Code 3/simulation/qsim
+vCode3
+Z1 !s110 1763455765
+!i10b 1
+!s100 ^mOijBUc=`@1BX9gOPY=J3
+IY=;H2J<7P6kWmbVh5:cR^3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1763455765
+Z4 8Code3.vo
+Z5 FCode3.vo
+L0 31
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1763455765.000000
+Z8 !s107 Code3.vo|
+Z9 !s90 -work|work|Code3.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@code3
+vCode3_vlg_vec_tst
+!s110 1763455766
+!i10b 1
+!s100 _YoYZmRAlNIPjez4j5AEn3
+IK_LV[a4UL7mAS0WMDZ]Qb1
+R2
+R0
+w1763455764
+8Waveform4.vwf.vt
+FWaveform4.vwf.vt
+L0 29
+R6
+r1
+!s85 0
+31
+!s108 1763455766.000000
+!s107 Waveform4.vwf.vt|
+!s90 -work|work|Waveform4.vwf.vt|
+!i113 1
+R10
+R11
+n@code3_vlg_vec_tst
+vhard_block
+R1
+!i10b 1
+!s100 aGGaXF9Z5nE6o8`Z`T^Yg0
+IP2YTE8k04GKIC`8B]6gY<1
+R2
+R0
+R3
+R4
+R5
+L0 149
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

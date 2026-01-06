@@ -1,0 +1,117 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/M45/simulation/qsim
+vhard_block
+Z1 !s110 1766141476
+!i10b 1
+!s100 8XQX86_Ba<1^8YJgZDGHB1
+INXQB?Xn2UXVFehf5<Rg332
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1766141475
+Z4 8M45.vo
+Z5 FM45.vo
+L0 2060
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1766141476.000000
+Z8 !s107 M45.vo|
+Z9 !s90 -work|work|M45.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vM45
+Z12 !s110 1766139311
+!i10b 1
+!s100 FnN[`R]Bgi^EAUHDFA3hZ2
+I`=E]dGO6N]63;>Po>_8`O3
+R2
+R0
+Z13 w1766139309
+R4
+R5
+Z14 L0 31
+R6
+r1
+!s85 0
+31
+Z15 !s108 1766139311.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@m45
+vM45_vlg_vec_tst
+R12
+!i10b 1
+!s100 ^RWj7hZHdkLXoWGFOOc;S1
+I1M4[aQ4[IBjZgaMH0k^^i3
+R2
+R0
+R13
+Z16 8Waveform.vwf.vt
+Z17 FWaveform.vwf.vt
+Z18 L0 29
+R6
+r1
+!s85 0
+31
+R15
+!s107 Waveform.vwf.vt|
+Z19 !s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+n@m45_vlg_vec_tst
+vtop_module
+R1
+!i10b 1
+!s100 8obBz3hiURS1<dF2FQz0]3
+I97O0BOT:Mf>]ONTTz`W4K0
+R2
+R0
+R3
+R4
+R5
+R14
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vtop_module_vlg_vec_tst
+R1
+!i10b 1
+!s100 V1Ul]_0V?H_;G6;M_f^6j1
+I]]aA`E8LNXjU=^bMc:WVZ0
+R2
+R0
+w1766141474
+R16
+R17
+R18
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform.vwf.vt|
+R19
+!i113 1
+R10
+R11

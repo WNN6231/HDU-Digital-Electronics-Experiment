@@ -1,0 +1,8 @@
+|BeltAlarm
+A => Alarm.IN0
+B => Alarm.IN0
+B => Alarm.IN1
+C => Alarm.IN1
+Alarm << Alarm.DB_MAX_OUTPUT_PORT_TYPE
+
+

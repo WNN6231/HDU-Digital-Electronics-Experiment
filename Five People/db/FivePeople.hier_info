@@ -1,0 +1,9 @@
+|FivePeople
+a => Add0.IN1
+b => Add0.IN2
+c => Add1.IN4
+d => Add2.IN6
+e => Add3.IN6
+y << LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+

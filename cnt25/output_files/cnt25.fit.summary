@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Dec 24 19:39:49 2025
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : cnt25
+Top-level Entity Name : cnt25
+Family : Cyclone IV E
+Device : EP4CE40U19A7
+Timing Models : Final
+Total logic elements : 33 / 39,600 ( < 1 % )
+    Total combinational functions : 33 / 39,600 ( < 1 % )
+    Dedicated logic registers : 8 / 39,600 ( < 1 % )
+Total registers : 8
+Total pins : 16 / 329 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,161,216 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 232 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

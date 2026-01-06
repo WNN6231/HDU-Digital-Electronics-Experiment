@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, D:/intelFPGA_lite/Belt Alarm/BeltAlarm.v
+source_file = 1, D:/intelFPGA_lite/Belt Alarm/Waveform.vwf
+source_file = 1, D:/intelFPGA_lite/Belt Alarm/db/BeltAlarm.cbx.xml
+design_name = BeltAlarm
+instance = comp, \Alarm~output , Alarm~output, BeltAlarm, 1
+instance = comp, \A~input , A~input, BeltAlarm, 1
+instance = comp, \C~input , C~input, BeltAlarm, 1
+instance = comp, \B~input , B~input, BeltAlarm, 1
+instance = comp, \Alarm~0 , Alarm~0, BeltAlarm, 1
+design_name = hard_block
+instance = comp, \~ALTERA_ASDO_DATA1~~ibuf , ~ALTERA_ASDO_DATA1~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_FLASH_nCE_nCSO~~ibuf , ~ALTERA_FLASH_nCE_nCSO~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_DATA0~~ibuf , ~ALTERA_DATA0~~ibuf, hard_block, 1

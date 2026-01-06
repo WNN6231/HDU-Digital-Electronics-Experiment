@@ -1,0 +1,11 @@
+
+State Machine - |trafficlight|state
+Name state.S_B_LEFT_Y state.S_B_LEFT_G state.S_B_STR_Y state.S_B_STR_G state.S_A_LEFT_Y state.S_A_LEFT_G state.S_A_STR_Y state.S_A_STR_G 
+state.S_A_STR_G 0 0 0 0 0 0 0 0 
+state.S_A_STR_Y 0 0 0 0 0 0 1 1 
+state.S_A_LEFT_G 0 0 0 0 0 1 0 1 
+state.S_A_LEFT_Y 0 0 0 0 1 0 0 1 
+state.S_B_STR_G 0 0 0 1 0 0 0 1 
+state.S_B_STR_Y 0 0 1 0 0 0 0 1 
+state.S_B_LEFT_G 0 1 0 0 0 0 0 1 
+state.S_B_LEFT_Y 1 0 0 0 0 0 0 1 

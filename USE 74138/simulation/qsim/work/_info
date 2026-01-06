@@ -1,0 +1,75 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/USE 74138/simulation/qsim
+vhard_block
+Z1 !s110 1764929952
+!i10b 1
+!s100 Y9oi_5=F2;PW7_Oil_L]N2
+IKYXQaIA33fCRVHYR2c2lG0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1764929945
+Z4 8USE74138.vo
+Z5 FUSE74138.vo
+L0 135
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1764929952.000000
+Z8 !s107 USE74138.vo|
+Z9 !s90 -work|work|USE74138.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vUSE74138
+R1
+!i10b 1
+!s100 janl3lCW:CCQ:YEKXz;W:1
+I<8C[FoH4oe54Q:;[a=9[21
+R2
+R0
+R3
+R4
+R5
+L0 31
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@u@s@e74138
+vUSE74138_vlg_vec_tst
+R1
+!i10b 1
+!s100 h;;e9^Sk2`z3lYTo2i0[U1
+I8XS<zia2937<VmNWQHEH52
+R2
+R0
+R3
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+n@u@s@e74138_vlg_vec_tst

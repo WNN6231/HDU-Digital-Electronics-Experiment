@@ -1,0 +1,121 @@
+|FourAdd
+s0 <= FullAdd:inst.S
+cin => FullAdd:inst.Cin
+b0 => FullAdd:inst.B
+a0 => FullAdd:inst.A
+s1 <= FullAdd:inst2.S
+b1 => FullAdd:inst2.B
+a1 => FullAdd:inst2.A
+s2 <= FullAdd:inst1.S
+b2 => FullAdd:inst1.B
+a2 => FullAdd:inst1.A
+Cout <= FullAdd:inst3.S
+b3 => FullAdd:inst3.B
+a3 => FullAdd:inst3.A
+s3 <= FullAdd:inst3.C
+
+
+|FourAdd|FullAdd:inst
+S <= HalfAdd:inst.S
+Cin => HalfAdd:inst.A
+B => HalfAdd:inst1.A
+A => HalfAdd:inst1.B
+C <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourAdd|FullAdd:inst|HalfAdd:inst
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst1.IN1
+B => inst.IN1
+B => inst1.IN0
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourAdd|FullAdd:inst|HalfAdd:inst1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst1.IN1
+B => inst.IN1
+B => inst1.IN0
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourAdd|FullAdd:inst2
+S <= HalfAdd:inst.S
+Cin => HalfAdd:inst.A
+B => HalfAdd:inst1.A
+A => HalfAdd:inst1.B
+C <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourAdd|FullAdd:inst2|HalfAdd:inst
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst1.IN1
+B => inst.IN1
+B => inst1.IN0
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourAdd|FullAdd:inst2|HalfAdd:inst1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst1.IN1
+B => inst.IN1
+B => inst1.IN0
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourAdd|FullAdd:inst1
+S <= HalfAdd:inst.S
+Cin => HalfAdd:inst.A
+B => HalfAdd:inst1.A
+A => HalfAdd:inst1.B
+C <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourAdd|FullAdd:inst1|HalfAdd:inst
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst1.IN1
+B => inst.IN1
+B => inst1.IN0
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourAdd|FullAdd:inst1|HalfAdd:inst1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst1.IN1
+B => inst.IN1
+B => inst1.IN0
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourAdd|FullAdd:inst3
+S <= HalfAdd:inst.S
+Cin => HalfAdd:inst.A
+B => HalfAdd:inst1.A
+A => HalfAdd:inst1.B
+C <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourAdd|FullAdd:inst3|HalfAdd:inst
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst1.IN1
+B => inst.IN1
+B => inst1.IN0
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourAdd|FullAdd:inst3|HalfAdd:inst1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst1.IN1
+B => inst.IN1
+B => inst1.IN0
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,81 @@
+|cnt25
+DIGIT_ENABLE <= <GND>
+seg_ten[0] <= bcd_to_7seg:u.seg[0]
+seg_ten[1] <= bcd_to_7seg:u.seg[1]
+seg_ten[2] <= bcd_to_7seg:u.seg[2]
+seg_ten[3] <= bcd_to_7seg:u.seg[3]
+seg_ten[4] <= bcd_to_7seg:u.seg[4]
+seg_ten[5] <= bcd_to_7seg:u.seg[5]
+seg_ten[6] <= bcd_to_7seg:u.seg[6]
+CLK => 74192:U1.DN
+seg_unit[0] <= bcd_to_7seg:i.seg[0]
+seg_unit[1] <= bcd_to_7seg:i.seg[1]
+seg_unit[2] <= bcd_to_7seg:i.seg[2]
+seg_unit[3] <= bcd_to_7seg:i.seg[3]
+seg_unit[4] <= bcd_to_7seg:i.seg[4]
+seg_unit[5] <= bcd_to_7seg:i.seg[5]
+seg_unit[6] <= bcd_to_7seg:i.seg[6]
+
+
+|cnt25|bcd_to_7seg:u
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cnt25|74192:U2
+BON <= 28.DB_MAX_OUTPUT_PORT_TYPE
+CLR => 44.IN0
+LDN => 43.IN0
+B => 53.IN2
+D => 55.IN2
+A => 52.IN2
+DN => 99.IN0
+UP => 98.IN0
+C => 54.IN2
+CON <= 77.DB_MAX_OUTPUT_PORT_TYPE
+QD <= 23.DB_MAX_OUTPUT_PORT_TYPE
+QC <= 24.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 25.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 26.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cnt25|74192:U1
+BON <= 28.DB_MAX_OUTPUT_PORT_TYPE
+CLR => 44.IN0
+LDN => 43.IN0
+B => 53.IN2
+D => 55.IN2
+A => 52.IN2
+DN => 99.IN0
+UP => 98.IN0
+C => 54.IN2
+CON <= 77.DB_MAX_OUTPUT_PORT_TYPE
+QD <= 23.DB_MAX_OUTPUT_PORT_TYPE
+QC <= 24.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 25.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 26.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cnt25|bcd_to_7seg:i
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

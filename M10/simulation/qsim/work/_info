@@ -1,0 +1,75 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/M10/simulation/qsim
+vhard_block
+Z1 !s110 1766578213
+!i10b 1
+!s100 6iRW7JL91i:lX2B@bei273
+IOIh^n6=9IZ;ZC]fzIaKMK2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1766578213
+Z4 8M10.vo
+Z5 FM10.vo
+L0 377
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1766578213.000000
+Z8 !s107 M10.vo|
+Z9 !s90 -work|work|M10.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vM10
+R1
+!i10b 1
+!s100 GR_zd`[G9igT:TT6XDzo:2
+I]XP:lZO_0ZicU2b<ggB^_1
+R2
+R0
+R3
+R4
+R5
+L0 31
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@m10
+vM10_vlg_vec_tst
+R1
+!i10b 1
+!s100 bIIX^^`K?:<Y`32Z6iF^A2
+I<QDBAm7GXGA0]:W=Kj2S31
+R2
+R0
+w1766578212
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+n@m10_vlg_vec_tst

@@ -1,0 +1,75 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/FULL ADD/simulation/qsim
+vFullAdd
+Z1 !s110 1763447751
+!i10b 1
+!s100 >nMmmUkf5UgER>Gmg3@<a3
+IQ`8zYLH;zV7WSTk]zaY2h3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1763447749
+Z4 8FullAdd.vo
+Z5 FFullAdd.vo
+L0 31
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1763447751.000000
+Z8 !s107 FullAdd.vo|
+Z9 !s90 -work|work|FullAdd.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@full@add
+vFullAdd_vlg_vec_tst
+R1
+!i10b 1
+!s100 mWDH3^PGW3oLnj_>=2kAE0
+INXm19G5ScMlXnnTL_zD4j3
+R2
+R0
+R3
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+L0 29
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R10
+R11
+n@full@add_vlg_vec_tst
+vhard_block
+R1
+!i10b 1
+!s100 WhXL`_[F1V8mkd5@G_?Fh1
+IlN@JmZB8jnXZUXQP5o?PZ3
+R2
+R0
+R3
+R4
+R5
+L0 172
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

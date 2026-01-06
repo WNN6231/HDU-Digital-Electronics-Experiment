@@ -1,0 +1,220 @@
+module trafficlight(
+    input  wire clk,            // 系统时钟 (假设 50MHz)
+    input  wire rst_n,          // 复位信号 (低电平有效)
+    
+    // --- LED 输出接口 (对应图片中的LED灯) ---
+    // A通道 (南北)
+    output reg led_a_straight_g, // A直行-绿
+    output reg led_a_straight_y, // A直行-黄
+    output reg led_a_straight_r, // A直行-红
+    output reg led_a_left_g,     // A左转-绿
+    output reg led_a_left_y,     // A左转-黄
+    output reg led_a_left_r,     // A左转-红
+    
+    // B通道 (东西)
+    output reg led_b_straight_g, // B直行-绿
+    output reg led_b_straight_y, // B直行-黄
+    output reg led_b_straight_r, // B直行-红
+    output reg led_b_left_g,     // B左转-绿
+    output reg led_b_left_y,     // B左转-黄
+    output reg led_b_left_r,     // B左转-红
+
+    // --- 数码管接口 (对应 A/B 通道显示) ---
+    output reg [3:0] seg_sel,    // 位选信号 (控制哪一位数码管亮)
+    output reg [7:0] seg_led     // 段选信号 (a-g + dot)
+);
+
+    // ============================================================
+    // 1. 参数定义 (时间参数化，方便仿真和演示)
+    // ============================================================
+    // 演示模式 (时间短，方便录视频):
+    parameter T_STRAIGHT = 15;  // 直行绿灯时间
+    parameter T_LEFT     = 10;  // 左转绿灯时间
+    parameter T_YELLOW   = 3;   // 黄灯时间
+    parameter T_BLINK    = 5;   // 最后几秒开始闪烁 (题目要求10秒，演示可改为5秒)
+    
+    // 定义状态
+    localparam S_A_STR_G  = 0; // A直行绿
+    localparam S_A_STR_Y  = 1; // A直行黄
+    localparam S_A_LEFT_G = 2; // A左转绿
+    localparam S_A_LEFT_Y = 3; // A左转黄
+    localparam S_B_STR_G  = 4; // B直行绿
+    localparam S_B_STR_Y  = 5; // B直行黄
+    localparam S_B_LEFT_G = 6; // B左转绿
+    localparam S_B_LEFT_Y = 7; // B左转黄
+
+    // ============================================================
+    // 2. 分频模块 (生成 1Hz 秒脉冲 和 闪烁时钟)
+    // ============================================================
+    reg [25:0] cnt_1s;
+    reg        clk_1hz;
+    reg        clk_blink; // 用于闪烁 (约2-4Hz)
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            cnt_1s <= 0;
+            clk_1hz <= 0;
+            clk_blink <= 0;
+        end else begin
+            if (cnt_1s >= 24_999_999) begin // 50MHz / 25M * 2 = 1Hz
+                cnt_1s <= 0;
+                clk_1hz <= ~clk_1hz;
+            end else begin
+                cnt_1s <= cnt_1s + 1;
+            end
+            
+            // 生成闪烁时钟 (取计数器高位即可简单实现，或者单独计数)
+            // 这里利用cnt_1s的中间位实现约 4Hz 的闪烁
+            clk_blink <= cnt_1s[23]; 
+        end
+    end
+
+    // ============================================================
+    // 3. 状态机与倒计时逻辑
+    // ============================================================
+    reg [2:0]  state, next_state;
+    reg [7:0]  cnt_time;      // 倒计时计数器
+    wire       cnt_zero;      // 倒数到0标志
+
+    assign cnt_zero = (cnt_time == 0);
+
+    // 状态跳转逻辑
+    always @(posedge clk_1hz or negedge rst_n) begin
+        if (!rst_n) begin
+            state <= S_A_STR_G;
+            cnt_time <= T_STRAIGHT;
+        end else begin
+            if (cnt_zero) begin
+                state <= next_state; // 时间到，切换状态
+                // 预装载下一个状态的时间
+                case (next_state)
+                    S_A_STR_G, S_B_STR_G: cnt_time <= T_STRAIGHT;
+                    S_A_LEFT_G, S_B_LEFT_G: cnt_time <= T_LEFT;
+                    default: cnt_time <= T_YELLOW;
+                endcase
+            end else begin
+                cnt_time <= cnt_time - 1;
+            end
+        end
+    end
+
+    // 下一状态判定
+    always @(*) begin
+        case (state)
+            S_A_STR_G:  next_state = S_A_STR_Y;
+            S_A_STR_Y:  next_state = S_A_LEFT_G;
+            S_A_LEFT_G: next_state = S_A_LEFT_Y;
+            S_A_LEFT_Y: next_state = S_B_STR_G; // A走完，换B直行
+            S_B_STR_G:  next_state = S_B_STR_Y;
+            S_B_STR_Y:  next_state = S_B_LEFT_G;
+            S_B_LEFT_G: next_state = S_B_LEFT_Y;
+            S_B_LEFT_Y: next_state = S_A_STR_G; // B走完，回A直行
+            default:    next_state = S_A_STR_G;
+        endcase
+    end
+
+    // ============================================================
+    // 4. LED 输出逻辑 (含闪烁功能)
+    // ============================================================
+    // 辅助信号：当前是否需要闪烁？
+    // 只有在绿灯状态，且倒计时小于设定值时闪烁
+    wire is_blinking;
+    assign is_blinking = (cnt_time <= T_BLINK) && clk_blink;
+
+    always @(*) begin
+        // 默认全部熄灭或红灯常亮，下面case中只写绿/黄逻辑，简化代码
+        // 初始化：红灯亮，绿黄灭
+        {led_a_straight_g, led_a_straight_y, led_a_straight_r} = 3'b001;
+        {led_a_left_g,     led_a_left_y,     led_a_left_r}     = 3'b001;
+        {led_b_straight_g, led_b_straight_y, led_b_straight_r} = 3'b001;
+        {led_b_left_g,     led_b_left_y,     led_b_left_r}     = 3'b001;
+
+        case (state)
+            // --- A 通道 (南北) 控制 ---
+            S_A_STR_G: begin
+                led_a_straight_r = 0;
+                // 倒计时最后闪烁，否则常亮
+                led_a_straight_g = (cnt_time <= T_BLINK) ? is_blinking : 1'b1;
+            end
+            S_A_STR_Y: begin
+                led_a_straight_r = 0;
+                led_a_straight_y = 1;
+            end
+            S_A_LEFT_G: begin
+                led_a_left_r = 0;
+                led_a_left_g = (cnt_time <= T_BLINK) ? is_blinking : 1'b1;
+                // 注意：左转时，直行通常保持红灯
+            end
+            S_A_LEFT_Y: begin
+                led_a_left_r = 0;
+                led_a_left_y = 1;
+            end
+
+            // --- B 通道 (东西) 控制 ---
+            S_B_STR_G: begin
+                led_b_straight_r = 0;
+                led_b_straight_g = (cnt_time <= T_BLINK) ? is_blinking : 1'b1;
+            end
+            S_B_STR_Y: begin
+                led_b_straight_r = 0;
+                led_b_straight_y = 1;
+            end
+            S_B_LEFT_G: begin
+                led_b_left_r = 0;
+                led_b_left_g = (cnt_time <= T_BLINK) ? is_blinking : 1'b1;
+            end
+            S_B_LEFT_Y: begin
+                led_b_left_r = 0;
+                led_b_left_y = 1;
+            end
+        endcase
+    end
+
+    // ============================================================
+    // 5. 数码管扫描显示模块
+    // ============================================================
+    // 我们需要显示当前的 cnt_time。
+    // 假设 A和B通道 显示相同的时间（当前阶段的剩余时间）
+    // 数码管共4位：A高位, A低位, B高位, B低位
+    
+    reg [1:0] scan_cnt; // 扫描计数器
+    reg [3:0] disp_num; // 当前要显示的数字 (0-9)
+    
+    // 生成快一点的扫描时钟 (比如 1kHz)
+    reg [15:0] cnt_scan;
+    always @(posedge clk) cnt_scan <= cnt_scan + 1;
+    wire clk_scan = cnt_scan[15]; // 约 700Hz
+
+    // 拆分个位和十位
+    wire [3:0] time_tens = cnt_time / 10;
+    wire [3:0] time_ones = cnt_time % 10;
+
+    always @(posedge clk_scan) begin
+        scan_cnt <= scan_cnt + 1;
+        case (scan_cnt)
+            2'b00: begin seg_sel <= 4'b1110; disp_num <= time_ones; end // A通道 个位
+            2'b01: begin seg_sel <= 4'b1101; disp_num <= time_tens; end // A通道 十位
+            2'b10: begin seg_sel <= 4'b1011; disp_num <= time_ones; end // B通道 个位
+            2'b11: begin seg_sel <= 4'b0111; disp_num <= time_tens; end // B通道 十位
+        endcase
+    end
+
+    // 7段数码管译码 (共阳极或共阴极需根据硬件调整，这里默认共阳，0为亮)
+    always @(*) begin
+        case (disp_num)
+            //                  gfe_dcba
+            4'h0: seg_led = 8'b1100_0000; 
+            4'h1: seg_led = 8'b1111_1001; 
+            4'h2: seg_led = 8'b1010_0100; 
+            4'h3: seg_led = 8'b1011_0000; 
+            4'h4: seg_led = 8'b1001_1001; 
+            4'h5: seg_led = 8'b1001_0010; 
+            4'h6: seg_led = 8'b1000_0010; 
+            4'h7: seg_led = 8'b1111_1000; 
+            4'h8: seg_led = 8'b1000_0000; 
+            4'h9: seg_led = 8'b1001_0000; 
+            default: seg_led = 8'b1111_1111; 
+        endcase
+    end
+
+endmodule

@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/traffic light/simulation/qsim
+vhard_block
+Z1 !s110 1766823862
+!i10b 1
+!s100 eS;P:[@ke1BmBalZ>?Xgz3
+I5WeRXJ24n;]UgnA><F@_<0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1766823855
+Z4 8trafficlight.vo
+Z5 Ftrafficlight.vo
+L0 5973
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1766823862.000000
+Z8 !s107 trafficlight.vo|
+Z9 !s90 -work|work|trafficlight.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vtrafficlight
+R1
+!i10b 1
+!s100 Y_N_Td@f;Ez_K9=96aC1n3
+IjB]^Ki>I[9=TnJnd_GRBZ1
+R2
+R0
+R3
+R4
+R5
+L0 31
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vtrafficlight_vlg_vec_tst
+R1
+!i10b 1
+!s100 D4acdO?C7X@SB_S=XKI;e0
+IU3eSGz:k60Efd[R[`;Szf3
+R2
+R0
+w1766823854
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11

@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, D:/intelFPGA_lite/USE 74138/USE74138.bdf
+source_file = 1, D:/intelFPGA_lite/USE 74138/Waveform.vwf
+source_file = 1, d:/intelfpga_lite/17.1/quartus/libraries/others/maxplus2/74138.bdf
+design_name = USE74138
+instance = comp, \F~output , F~output, USE74138, 1
+instance = comp, \A~input , A~input, USE74138, 1
+instance = comp, \C~input , C~input, USE74138, 1
+instance = comp, \B~input , B~input, USE74138, 1
+instance = comp, \inst1~0 , inst1~0, USE74138, 1
+design_name = hard_block
+instance = comp, \~ALTERA_ASDO_DATA1~~ibuf , ~ALTERA_ASDO_DATA1~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_FLASH_nCE_nCSO~~ibuf , ~ALTERA_FLASH_nCE_nCSO~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_DATA0~~ibuf , ~ALTERA_DATA0~~ibuf, hard_block, 1

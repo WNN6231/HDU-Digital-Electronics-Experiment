@@ -1,0 +1,38 @@
+module seq_gen (
+    input wire clk,
+    input wire rst_n,
+    output reg seq_out
+);
+
+ 
+    reg [3:0] cnt;
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            cnt <= 4'd0;
+        end
+        else if (cnt == 4'd8) begin
+            cnt <= 4'd0;
+        end
+        else begin
+            cnt <= cnt + 1'b1;
+        end
+    end
+
+
+    always @(*) begin
+        case (cnt)
+            4'd0: seq_out = 1'b1;
+            4'd1: seq_out = 1'b0;
+            4'd2: seq_out = 1'b1;
+            4'd3: seq_out = 1'b1;
+            4'd4: seq_out = 1'b0;
+            4'd5: seq_out = 1'b1;
+            4'd6: seq_out = 1'b0;
+            4'd7: seq_out = 1'b1;
+            4'd8: seq_out = 1'b1;
+            default: seq_out = 1'b0;
+        endcase
+    end
+
+endmodule
